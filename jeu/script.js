@@ -44,8 +44,12 @@ const board2 = document.querySelector("#success")
 //  ETAPE   2   Créer les 3 Portes
 
 const box5 = document.createElement("div")
+const box6 = document.createElement("div")
+const box7 = document.createElement("div")
 
 box5.classList.add("door-close")
+box6.classList.add("door-close")
+box7.classList.add("door-close")
 
 const board5 = document.querySelector("#door")
 
@@ -84,6 +88,7 @@ for (let i = 1; i <= 3; i++) {
             })
 
             board1.removeChild(box)
+
         }
 
         //Un succès en plus lorsque princesse est dernière la porte
@@ -102,22 +107,29 @@ for (let i = 1; i <= 3; i++) {
 
 }
 
+
 //  ETAPE   3   Créer un bouton Reset
 
-const box6 = document.createElement("div")
+const box8 = document.createElement("div")
 
-box6.classList.add("button")
+box8.classList.add("button")
 
 const board3 = document.querySelector("#reset")
 
-board3.appendChild(box6)
+board3.appendChild(box8)
 
-//box6.innerText =/////////////////////////////////////////////Comment mettre du texte?
+box8.innerText = 1/////////////////////////////////////////////Comment mettre du texte?
 
-box6.addEventListener("click", function () {
+box8.addEventListener("click", function () {
     console.log("Bouton" + "click!")
 
-    board5.removeChild(box5)
+
+    
+    //board5.remove("door-close")//Supprime toute les éléments
+    //board5.append(box5, box6, box7)//Ajoute tout les éléments
+
+    //board2.appendChild(box2)//Ajoute un élément
+    //board1.removeChild(box)//Supprime un élément
 
 })
 
