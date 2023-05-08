@@ -14,6 +14,12 @@ function shuffleChildren(parent) {
     }
 }
 
+//Pour réaliser d'autres parties Fonction NEXT
+
+    function next(){
+
+    }
+
 //  ETAPE   1.1   Créer les 3 Vies
 
 const box = document.createElement("div")
@@ -108,30 +114,51 @@ for (let i = 1; i <= 3; i++) {
 }
 
 
-//  ETAPE   3   Créer un bouton Reset
+//  ETAPE   3.1   Créer un bouton Reset
 
 const box8 = document.createElement("div")
 
-box8.classList.add("button")
+box8.classList.add("buttonR")
 
 const board3 = document.querySelector("#reset")
 
 board3.appendChild(box8)
 
-box8.innerText = 1/////////////////////////////////////////////Comment mettre du texte?
+box8.innerText = "RESET"// Pour inscrire du texte dans un noeud
 
 box8.addEventListener("click", function () {
     console.log("Bouton" + "click!")
 
-
-    
-    //board5.remove("door-close")//Supprime toute les éléments
-    //board5.append(box5, box6, box7)//Ajoute tout les éléments
-
-    //board2.appendChild(box2)//Ajoute un élément
-    //board1.removeChild(box)//Supprime un élément
+    location.reload()//Pour reset le jeu
 
 })
+
+//  ETAPE   3.2   Créer un bouton Next
+
+const box9 = document.createElement("div")
+
+box9.classList.add("buttonN")
+
+const board4 = document.querySelector("#next")
+
+board4.appendChild(box9)
+
+box9.innerText = "NEXT"
+
+box9.addEventListener("click", function () {
+    console.log("Bouton" + "click!")
+
+    board5.remove("door-close")//Pour passer à la partie suivante : CF Fonction NEXT
+    board5 = append(box6)
+})
+
+
+//board5.remove("door-close")//Supprime toute les éléments
+//board5.append(box5, box6, box7)//Ajoute tout les éléments
+
+//board2.appendChild(box2)//Ajoute un élément
+//board1.removeChild(box)//Supprime un élément
+
 
 //  ETAPE   5   Matérialiser les fonctions
 
