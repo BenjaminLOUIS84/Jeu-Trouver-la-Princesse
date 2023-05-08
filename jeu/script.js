@@ -13,13 +13,10 @@ function shuffleChildren(parent) {
         parent.appendChild(temp)
     }
 }
-
 //Pour réaliser d'autres parties Fonction NEXT
 
 function next() {
-
     board5.remove("door-close")//Supprime les portes
-
 }
 
 //  ETAPE   1.1   Créer les 3 Vies
@@ -52,7 +49,6 @@ const board2 = document.querySelector("#success")
 //  ETAPE   2   Créer les 3 Portes et le fonctionnement d'une partie 
 
 //  PARTIE 1
-
 
 const box5 = document.createElement("div")
 //const box6 = document.createElement("div")
@@ -93,76 +89,56 @@ for (let i = 1; i <= 3; i++) {
         //Une vie en moins lorsque ganon est dernière la porte
 
         if (i == 3) {
-
             board5.querySelectorAll(".door-close").forEach(function (validBox) {
                 validBox.classList.remove("door-close")
             })
-
             board1.removeChild(box)
-
         }
 
         //Un succès en plus lorsque princesse est dernière la porte
 
         if (i == 2) {
-
             board5.querySelectorAll(".door-close").forEach(function (validBox) {
                 validBox.classList.remove("door-close")
             })
-
             board2.appendChild(box2)
-
         }
-
     })
-
 }
 
 //  ETAPE   3.1   Créer un bouton Reset
 
 const box8 = document.createElement("div")
-
 box8.classList.add("buttonR")
-
 const board3 = document.querySelector("#reset")
-
 board3.appendChild(box8)
-
 box8.innerText = "RESET"// Pour inscrire du texte dans un noeud
 
 box8.addEventListener("click", function () {
     console.log("Bouton" + "click!")
 
     location.reload()//Pour reset le jeu
-
 })
 
 //  ETAPE   3.2   Créer un bouton Next
 
 const box9 = document.createElement("div")
-
 box9.classList.add("buttonN")
-
 const board4 = document.querySelector("#next")
-
 board4.appendChild(box9)
-
 box9.innerText = "NEXT"
 
 box9.addEventListener("click", function () {
     console.log("Bouton" + "click!")
 
     next()//Pour passer à la partie suivante : CF Fonction NEXT
-
 })
-
 
 //board5.remove("door-close")//Supprime toute les éléments
 //board5.append(box5, box6, box7)//Ajoute tout les éléments
 
 //board2.appendChild(box2)//Ajoute un élément
 //board1.removeChild(box)//Supprime un élément
-
 
 //  ETAPE   5   Matérialiser les fonctions
 
