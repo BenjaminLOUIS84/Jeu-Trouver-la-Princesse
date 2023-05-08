@@ -17,7 +17,7 @@ function shuffleChildren(parent) {
 //Pour réaliser d'autres parties Fonction NEXT
 
     function next(){
-
+        board2.append(box2,box3,box4)
     }
 
 //  ETAPE   1.1   Créer les 3 Vies
@@ -47,7 +47,7 @@ box4.classList.add("star")
 
 const board2 = document.querySelector("#success")
 
-//  ETAPE   2   Créer les 3 Portes
+//  ETAPE   2   Créer les 3 Portes et le fonctionnement de la partie 1
 
 const box5 = document.createElement("div")
 const box6 = document.createElement("div")
@@ -113,7 +113,6 @@ for (let i = 1; i <= 3; i++) {
 
 }
 
-
 //  ETAPE   3.1   Créer un bouton Reset
 
 const box8 = document.createElement("div")
@@ -148,8 +147,8 @@ box9.innerText = "NEXT"
 box9.addEventListener("click", function () {
     console.log("Bouton" + "click!")
 
-    board5.remove("door-close")//Pour passer à la partie suivante : CF Fonction NEXT
-    board5 = append(box6)
+    next()//Pour passer à la partie suivante : CF Fonction NEXT
+    
 })
 
 
