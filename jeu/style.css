@@ -156,7 +156,6 @@ h1 {
 
     #life {
         margin-left: 0px;
-        margin-bottom: 40px;
     }
 
     .heart {
@@ -164,6 +163,10 @@ h1 {
         width: 30px;
         height: 30px;
         background-size: 30px;
+    }
+
+    .star {
+        margin-bottom: 20px;
     }
 
     .door-close {
@@ -187,6 +190,19 @@ h1 {
         height: 280px;
     }
 
+    .command {
+        margin-top: 0px;
+    }
+
+    .buttonR,
+    .buttonN {
+        width: 100px;
+    }
+
+    .buttonR:hover,
+    .buttonN:hover {
+        animation: none;
+    }
 
 
 
