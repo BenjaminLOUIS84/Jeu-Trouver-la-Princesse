@@ -147,7 +147,7 @@ h1 {
 
 /*//////////////////TELEPHONE//////////////////*/
 
-@media only screen and (max-width:360px) {
+@media only screen and (max-width:600px) {
 
     h1 {
         font-size: 1.7em;
@@ -170,7 +170,7 @@ h1 {
     }
 
     .door-close {
-        background-size: 130px;
+        background-size: 140px;
         height: 230px;
     }
 
