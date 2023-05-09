@@ -155,7 +155,7 @@ h1 {
     }
 
     #life {
-        margin-left: 0px;
+        margin-left: 10px;
     }
 
     .heart {
@@ -172,22 +172,23 @@ h1 {
     .door-close {
         background-size: 140px;
         height: 230px;
+        width: 150px;
     }
 
     .door-open {
         background-size: 120px;
         height: 270px;
-        width: 200px;
+        width: 120px;
     }
 
     .ganon {
-        width: 140px;
-        height: 195px;
+        width: 120px;
+        height: 167px;
     }
 
     .princesse {
-        width: 140px;
-        height: 280px;
+        width: 120px;
+        height: 240px;
     }
 
     .command {
