@@ -147,7 +147,7 @@ h1 {
 
 /*//////////////////TELEPHONE//////////////////*/
 
-@media only screen and (max-width:400px) {
+@media only screen and (max-width:360px) {
 
     h1 {
         font-size: 1.7em;
@@ -160,9 +160,9 @@ h1 {
 
     .heart {
         margin-left: 0px;
-        width: 30px;
-        height: 30px;
-        background-size: 30px;
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
     }
 
     .star {
@@ -170,13 +170,13 @@ h1 {
     }
 
     .door-close {
-        background-size: 140px;
-        height: 250px;
+        background-size: 130px;
+        height: 230px;
     }
 
     .door-open {
-        background-size: 140px;
-        height: 290px;
+        background-size: 120px;
+        height: 270px;
         width: 200px;
     }
 
