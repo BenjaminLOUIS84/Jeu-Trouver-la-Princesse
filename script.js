@@ -1,3 +1,6 @@
+//Quand la page est chargée on peut intéragir avec le promgramme
+window.onload
+
 //  ETAPE   4   Créer les fonctions
 
 //Pour rendre l'ordre des portes aléatoire
