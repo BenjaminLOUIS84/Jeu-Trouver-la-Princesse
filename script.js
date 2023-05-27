@@ -1,3 +1,4 @@
+                                                        //Par convention on écrit les fonctions au début du code
 function shuffleChildren(parent) {                      //Pour rendre l'ordre des portes aléatoire utiliser la fonction shuffleChildren
     let children = parent.children
     let i = children.length, k, temp
@@ -9,46 +10,117 @@ function shuffleChildren(parent) {                      //Pour rendre l'ordre de
         children[k] = children[i]
         parent.appendChild(temp)
     }
+}    
+
+function remove(){                                      //Cette fonction permet de supprimer automatiquement au bout d'une seconde les éléments de la partie en cours
+                                                        //setTimeout(function()){},1000); permet de déclencher une action à retardement suivant un delais 1000ms soit 1s
+    setTimeout(function(){                              
+        board5.querySelectorAll(".door-open").forEach(function (validBox) {
+            validBox.classList.remove("door-open")})}, 1000);
+    setTimeout(function(){
+        board5.querySelectorAll(".ganon").forEach(function (validBox) {
+            validBox.classList.remove("ganon")})}, 1000);
+    setTimeout(function(){       
+        board5.querySelectorAll(".princesse").forEach(function (validBox) {
+            validBox.classList.remove("princesse")})}, 1000);
 }
 
-function next() {                                       //Après avoir créer le déroulement du jeu ci après celui-ci est inscrit dans une fonction
-    let box6 = document.createElement("div")            //Par convention on écrit les fonctions au début du code
-    box6.classList.add("door-close")
-    let board6 = document.querySelector("#door")
+function next() {                                       //Après avoir créer le déroulement du jeu ci après celui-ci est inscrit dans une fonction next()
+
+    let box5 = document.createElement("div")            
+    box5.classList.add("door-close")
+    let board5 = document.querySelector("#door")
     let nb = 1
 
     for (let i = 1; i <= 3; i++) {
-        let newbox6 = box6.cloneNode()
-        board6.appendChild(newbox6)
-        newbox6.addEventListener("click", function () {
+        let newbox5 = box5.cloneNode()
+        board5.appendChild(newbox5)
+        newbox5.addEventListener("click", function () {
             console.log("Porte n°" + i + ", click!")
 
             if (i => nb) {
-                newbox6.classList.add("door-open")
+                newbox5.classList.add("door-open")
                 if (i == 1) {
-                    newbox6.classList.add("door-open")
+                    newbox5.classList.add("door-open")
                 }
                 else if (i == 2) {
-                    newbox6.classList.add("princesse")
+                    newbox5.classList.add("princesse")
                 }
                 else if (i == 3) {
-                    newbox6.classList.add("ganon")
+                    newbox5.classList.add("ganon")
                 }
                 nb++
             }
             if (i == 3) {
-                board6.querySelectorAll(".door-close").forEach(function (validBox) {
+                board5.querySelectorAll(".door-close").forEach(function (validBox) {
                     validBox.classList.remove("door-close")})
                 board1.removeChild(box0)
+                remove()                                    
+                setTimeout(function(){                     
+                    next1()
+                }, 1000); 
             }
             if (i == 2) {
-                board6.querySelectorAll(".door-close").forEach(function (validBox) {
+                board5.querySelectorAll(".door-close").forEach(function (validBox) {
                     validBox.classList.remove("door-close") })
                 board2.appendChild(box3)
+                remove()                                    
+                setTimeout(function(){                      
+                    next1()
+                }, 1000); 
             }
         })
     }
-    shuffleChildren(board6)
+    shuffleChildren(board5)
+}
+
+function next1() {                                       //Après avoir créer le déroulement du jeu ci après celui-ci est inscrit dans une fonction next()
+
+    let box5 = document.createElement("div")            
+    box5.classList.add("door-close")
+    let board5 = document.querySelector("#door")
+    let nb = 1
+
+    for (let i = 1; i <= 3; i++) {
+        let newbox5 = box5.cloneNode()
+        board5.appendChild(newbox5)
+        newbox5.addEventListener("click", function () {
+            console.log("Porte n°" + i + ", click!")
+
+            if (i => nb) {
+                newbox5.classList.add("door-open")
+                if (i == 1) {
+                    newbox5.classList.add("door-open")
+                }
+                else if (i == 2) {
+                    newbox5.classList.add("princesse")
+                }
+                else if (i == 3) {
+                    newbox5.classList.add("ganon")
+                }
+                nb++
+            }
+            if (i == 3) {
+                board5.querySelectorAll(".door-close").forEach(function (validBox) {
+                    validBox.classList.remove("door-close")})
+                board1.removeChild(box1)
+                remove()                                    
+                setTimeout(function(){                     
+                    next1()
+                }, 1000); 
+            }
+            if (i == 2) {
+                board5.querySelectorAll(".door-close").forEach(function (validBox) {
+                    validBox.classList.remove("door-close") })
+                board2.appendChild(box4)
+                remove()                                    
+                setTimeout(function(){                      
+                    next1()
+                }, 1000); 
+            }
+        })
+    }
+    shuffleChildren(board5)
 }
 
 //  ETAPE   1.1   Créer les 3 Vies
@@ -115,6 +187,10 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
                 validBox.classList.remove("door-close") //Permet supprimer les deux autres portes lorqsque l'image du monstre est affichée
             })
             board1.removeChild(box)                     //Permet de faire disparaitre un coeur
+            remove()                                    //remove() supprime automatiquement les éléements de la partie en cour au bout d'une seconde
+            setTimeout(function(){                      //next() execute automatiquement la partie suivante au bout d'une seconde
+                next()
+            }, 1000); 
         }
 
         //Un succès en plus lorsque princesse est dernière la porte
@@ -124,9 +200,12 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
                 validBox.classList.remove("door-close")
             })
             board2.appendChild(box2)                    //Permet de faire apparaitre une étoile
+            remove()                                    //remove() supprime automatiquement les éléements de la partie en cour au bout d'une seconde
+            setTimeout(function(){                      //next() execute automatiquement la partie suivante au bout d'une seconde
+                next()
+            }, 1000);
         }
     })
-
     shuffleChildren(board5)                             //Permet de mélanger l'ordre des numéros de porte
 }
 
@@ -140,26 +219,4 @@ box8.innerText = "RESET"                                //Pour inscrire du texte
 box8.addEventListener("click", function () {
     location.reload()                                   //Fonction pour reset le jeu
 })
-
-///  ETAPE   3.2   Créer un bouton Next
-
-const box9 = document.createElement("div")
-box9.classList.add("buttonN")
-const board4 = document.querySelector("#next")
-board4.appendChild(box9)
-box9.innerText = "NEXT"
-box9.addEventListener("click", function () {
-    next()                                             //Pour passer à la partie suivante : CF Fonction NEXT
-})
-
-
-
-
-
-//board5.remove("door-close")//Supprime toute les éléments
-//board5.append(box5, box6, box7)//Ajoute tout les éléments
-
-//board2.appendChild(box2)//Ajoute un élément
-//board1.removeChild(box)//Supprime un élément
-
 

@@ -68,6 +68,9 @@ h1 {
     width: 180px;
     height: 350px;
     background-image: url("./images/Princesse.jpg");
+    
+    /* filter: drop-shadow(0 0 20px #121212); */
+    /* box-shadow: 0 0 20px #3d3d3d; */
 }
 
 .ganon {
@@ -94,7 +97,7 @@ h1 {
 .command {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin-top: 30px;
 }
