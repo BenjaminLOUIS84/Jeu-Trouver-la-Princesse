@@ -5,18 +5,22 @@ h1 {
 
 /*////////////////////////////////////////////////////////////*/
 
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #life {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin-left: 40px;
 }
 
 #success {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    margin-right: 40px;
 }
 
 #door {
@@ -24,6 +28,7 @@ h1 {
     flex-direction: row;
     justify-content: center;
 }
+
 /*///////////////////////////////////////////////////////////*/
 
 .heart {
@@ -68,7 +73,7 @@ h1 {
     width: 180px;
     height: 350px;
     background-image: url("./images/Princesse.jpg");
-    
+
     /* filter: drop-shadow(0 0 20px #121212); */
     /* box-shadow: 0 0 20px #3d3d3d; */
 }
@@ -154,7 +159,11 @@ h1 {
     }
 
     #life {
-        margin-left: 10px;
+        margin-left: 20px;
+    }
+
+    #success {
+        margin-right: 20px;
     }
 
     .heart {
@@ -166,6 +175,10 @@ h1 {
 
     .star {
         margin-bottom: 20px;
+        margin-left: 0px;
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
     }
 
     .door-close {
