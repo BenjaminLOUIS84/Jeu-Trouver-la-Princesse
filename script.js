@@ -30,6 +30,7 @@ function next() {                                       //Après avoir créer le
     let box5 = document.createElement("div")            
     box5.classList.add("door-close")
     let board5 = document.querySelector("#door")
+
     let nb = 1
 
     for (let i = 1; i <= 3; i++) {
@@ -54,19 +55,25 @@ function next() {                                       //Après avoir créer le
             if (i == 3) {
                 board5.querySelectorAll(".door-close").forEach(function (validBox) {
                     validBox.classList.remove("door-close")})
-                board1.removeChild(box0)
+                
+             //   board1.remove(box)
+             //       heart--
+
                 remove()                                    
                 setTimeout(function(){                     
-                    next1()
+                    next()
                 }, 1000); 
             }
             if (i == 2) {
                 board5.querySelectorAll(".door-close").forEach(function (validBox) {
                     validBox.classList.remove("door-close") })
-                board2.appendChild(box3)
+                
+                board2.appendChild(box2)
+            //        star++
+
                 remove()                                    
                 setTimeout(function(){                      
-                    next1()
+                    next()
                 }, 1000); 
             }
         })
@@ -74,81 +81,60 @@ function next() {                                       //Après avoir créer le
     shuffleChildren(board5)
 }
 
-function next1() {                                       //Après avoir créer le déroulement du jeu ci après celui-ci est inscrit dans une fonction next()
-
-    let box5 = document.createElement("div")            
-    box5.classList.add("door-close")
-    let board5 = document.querySelector("#door")
-    let nb = 1
-
-    for (let i = 1; i <= 3; i++) {
-        let newbox5 = box5.cloneNode()
-        board5.appendChild(newbox5)
-        newbox5.addEventListener("click", function () {
-            console.log("Porte n°" + i + ", click!")
-
-            if (i => nb) {
-                newbox5.classList.add("door-open")
-                if (i == 1) {
-                    newbox5.classList.add("door-open")
-                }
-                else if (i == 2) {
-                    newbox5.classList.add("princesse")
-                }
-                else if (i == 3) {
-                    newbox5.classList.add("ganon")
-                }
-                nb++
-            }
-            if (i == 3) {
-                board5.querySelectorAll(".door-close").forEach(function (validBox) {
-                    validBox.classList.remove("door-close")})
-                board1.removeChild(box1)
-                remove()                                    
-                setTimeout(function(){                     
-                    next1()
-                }, 1000); 
-            }
-            if (i == 2) {
-                board5.querySelectorAll(".door-close").forEach(function (validBox) {
-                    validBox.classList.remove("door-close") })
-                board2.appendChild(box4)
-                remove()                                    
-                setTimeout(function(){                      
-                    next1()
-                }, 1000); 
-            }
-        })
-    }
-    shuffleChildren(board5)
-}
 
 //  ETAPE   1.1   Créer les 3 Vies
 
-const box = document.createElement("div")               //Déclarer l'élément HTML "box" avec (const ou let) et l'instancier avec la fonction createElement                                       
-const box0 = document.createElement("div")
-const box1 = document.createElement("div")
+//const box = document.createElement("div")               //Déclarer l'élément HTML "box" avec (const ou let) et l'instancier avec la fonction createElement                                       
+//const box0 = document.createElement("div")
+//const box1 = document.createElement("div")
 
-box.classList.add("heart")                              //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "box"
-box0.classList.add("heart")                             //Dans le CSS attribuer une image coeur à l'élément
-box1.classList.add("heart")
+//box.classList.add("heart")                              //Modifier sa propriété classList pour améliorer cet élément dans le CSS en lui ajoutant "box"
+//box0.classList.add("heart")                             //Dans le CSS attribuer une image coeur à l'élément
+//box1.classList.add("heart")
 
-const board1 = document.querySelector("#life")          //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
-board1.appendChild(box)                                 //Pour afficher les éléments HTML utiliser appendChild() 
-board1.appendChild(box0)
-board1.appendChild(box1)                                //3 Coeurs seront afficher au début du jeu ceux ci pourront disparaitre au cours du jeu
+//const board1 = document.querySelector("#life")          //Pour modifier cet élément dans le JavaScript on peut créer un selecteur de requête (mode plus dynamique)
+//board1.appendChild(box)                                 //Pour afficher les éléments HTML utiliser appendChild() 
+//board1.appendChild(box0)
+//board1.appendChild(box1)                                //3 Coeurs seront afficher au début du jeu ceux ci pourront disparaitre au cours du jeu
 
 //  ETAPE   1.2   Créer les Succès (apparait chaque fois que la princesse est trouvée, ceux ci ne seront pas afficher au début du jeu)
 
+// const box2 = document.createElement("div")
+// const box3 = document.createElement("div")
+// const box4 = document.createElement("div")
+
+// box2.classList.add("star")                              //Dans le CSS attribuer une image étoile à l'élément
+// box3.classList.add("star")
+// box4.classList.add("star")
+
+//const board2 = document.querySelector("#success")
+
+
+const box = document.createElement("div")
+box.classList.add("heart") 
+const board1 = document.querySelector("#life")
+
+let heart = 1
+
+for (let i = 1; i <= 3; i++){
+    let newbox = box.cloneNode()
+    board1.appendChild(newbox)
+    
+}
+
+
 const box2 = document.createElement("div")
-const box3 = document.createElement("div")
-const box4 = document.createElement("div")
-
-box2.classList.add("star")                              //Dans le CSS attribuer une image étoile à l'élément
-box3.classList.add("star")
-box4.classList.add("star")
-
+box2.classList.add("star") 
 const board2 = document.querySelector("#success")
+
+let star = 1
+
+for (let i = 1; i <= 3; i++){
+    let newbox2 = box2.cloneNode()
+    board2.appendChild(newbox2)
+
+}
+
 
 //  ETAPE   2   Créer les 3 Portes et le fonctionnement d'une partie (Déroulement du jeu)
 
@@ -157,6 +143,7 @@ const board2 = document.querySelector("#success")
 let box5 = document.createElement("div")                               
 box5.classList.add("door-close")                        //Dans le CSS attribuer une image de porte fermée à l'élément
 let board5 = document.querySelector("#door")
+
 let nb = 1                                              //Déclarer la variable nb initialisée à 1 et servira pour créer et gérer des conditions
 
 for (let i = 1; i <= 3; i++) {                          //Créer une boucle for pour afficher avec appendChild() l'élément HTML board5 (porte fermée)
@@ -186,7 +173,10 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
             board5.querySelectorAll(".door-close").forEach(function (validBox) {
                 validBox.classList.remove("door-close") //Permet supprimer les deux autres portes lorqsque l'image du monstre est affichée
             })
-            board1.removeChild(box)                     //Permet de faire disparaitre un coeur
+
+          //  board1.remove(box)                     //Permet de faire disparaitre un coeur
+           // heart--
+
             remove()                                    //remove() supprime automatiquement les éléements de la partie en cour au bout d'une seconde
             setTimeout(function(){                      //next() execute automatiquement la partie suivante au bout d'une seconde
                 next()
@@ -199,7 +189,10 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
             board5.querySelectorAll(".door-close").forEach(function (validBox) {
                 validBox.classList.remove("door-close")
             })
+
             board2.appendChild(box2)                    //Permet de faire apparaitre une étoile
+           // star++
+
             remove()                                    //remove() supprime automatiquement les éléements de la partie en cour au bout d'une seconde
             setTimeout(function(){                      //next() execute automatiquement la partie suivante au bout d'une seconde
                 next()
@@ -219,4 +212,3 @@ box8.innerText = "RESET"                                //Pour inscrire du texte
 box8.addEventListener("click", function () {
     location.reload()                                   //Fonction pour reset le jeu
 })
-
