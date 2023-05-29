@@ -55,12 +55,9 @@ function next() {                                        //CF Commentaires pour 
                 if (i == 1) {
                     newbox5.classList.add("door-open")
                 }
-
                 else if (i == 2) {
                     newbox5.classList.add("princesse")
-
                 }
-
                 else if (i == 3) {
                     newbox5.classList.add("ganon")
                 }
@@ -105,7 +102,6 @@ function next() {                                        //CF Commentaires pour 
     
                 let newbox2 = box2.cloneNode()               //Permet de faire apparaitre une étoile
                 board2.prepend(newbox2)                      //Faire apparaitre une étoile à gauche avec prepend() (append() à droite)
-                
     
                 if (star == 1) {
                     alert("BRAVO !")                         //Si les 3 étoiles apparaissent un message d'alerte BRAVO ! s'affiche et le jeu reset
@@ -237,8 +233,7 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
 
             let newbox2 = box2.cloneNode()                 //Permet de faire apparaitre une étoile au fur et à mesure 
             board2.prepend(newbox2)                        //Faire apparaitre une étoile à gauche avec prepend() (append() à droite)
-            
-
+        
             if (star == 1) {
                 alert("BRAVO !")                         //Si les 3 étoiles apparaissent un message d'alerte BRAVO ! s'affiche et le jeu reset
                 setTimeout(function () {                 
@@ -277,7 +272,7 @@ box8.addEventListener("click", function () {
     
 
     let newbox = box.cloneNode()                  
-    board.remove(newbox)   
+    board.removeChild(newbox)   
 
 
 
