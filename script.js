@@ -71,8 +71,8 @@ function next() {                                        //CF Commentaires pour 
                     validBox.classList.remove("door-close") //Permet supprimer les deux autres portes lorqsque l'image du monstre est affichée
                 })
     
-                //let newbox = box.cloneNode()                  //Permet de faire disparaitre un coeur
-                //board.remove(newbox)                          //Faire disparaitre un coeur avec remove()
+                let newbox = box.cloneNode()                  //Permet de faire disparaitre un coeur
+                board.firstElementChild.remove(newbox)        //Faire disparaitre un coeur avec remove()
                 
                 
                 if (heart == 1) {                            
@@ -141,6 +141,7 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
     }
     console.log(heart)
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  ETAPE   1.2   Créer les 3 Succès ( une étoile apparaitra chaque fois que la princesse est trouvée, celles ci ne seront pas affichées au début du jeu)
 
@@ -202,8 +203,8 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
                 validBox.classList.remove("door-close") //Permet supprimer les deux autres portes lorqsque l'image du monstre est affichée
             })
 
-            //let newbox = box.cloneNode()                  //Permet de faire disparaitre un coeur
-            //board.remove(newbox)                          //Faire disparaitre un coeur avec remove()
+            let newbox = box.cloneNode()                  //Permet de faire disparaitre un coeur
+            board.firstElementChild.remove(newbox)        //Faire disparaitre un coeur avec remove()
             
             
             if (heart == 1) {                            
@@ -231,8 +232,8 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
                 validBox.classList.remove("door-close") //Permet supprimer les deux autres portes lorqsque l'image de la princesse est affichée
             })
 
-            let newbox2 = box2.cloneNode()                 //Permet de faire apparaitre une étoile au fur et à mesure 
-            board2.prepend(newbox2)                        //Faire apparaitre une étoile à gauche avec prepend() (append() à droite)
+            let newbox2 = box2.cloneNode()               //Permet de faire apparaitre une étoile au fur et à mesure 
+            board2.prepend(newbox2)                      //Faire apparaitre une étoile à gauche avec prepend() (append() à droite)
         
             if (star == 1) {
                 alert("BRAVO !")                         //Si les 3 étoiles apparaissent un message d'alerte BRAVO ! s'affiche et le jeu reset
@@ -255,31 +256,3 @@ for (let i = 1; i <= 3; i++) {                          //Créer une boucle for 
     shuffleChildren(board5)                             //Permet de mélanger l'ordre des numéros de porte
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  ETAPE   3.1   Créer un bouton TEST pour tester des nouvelles formules pour améliorer le jeu)
-
-const box8 = document.createElement("div")
-box8.classList.add("buttonR")
-const board3 = document.querySelector("#reset")
-board3.appendChild(box8)
-box8.innerText = "TEST"                                //Pour inscrire du texte dans un noeud
-box8.addEventListener("click", function () {
-
-    //location.reload()                                 //Fonction pour reset le jeu (utile à la construction mais devient inutile si le jeu se reset automatiquement)
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //RECHERCHES// 
-    //Supprimer une vie
-    
-
-    let newbox = box.cloneNode()                  
-    board.removeChild(newbox)   
-
-
-
-})
-
-
-
-
-
-
