@@ -3,6 +3,22 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.link {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+a {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
 /*////////////////////////////////////////////////////////////*/
 
 .items {
